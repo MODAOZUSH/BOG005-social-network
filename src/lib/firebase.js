@@ -3,8 +3,10 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase
 import {
   getAuth,
   onAuthStateChanged,
-/*   signInWithEmailAndPassword,
-  createUserWithEmailAndPassword, */
+  createUserWithEmailAndPassword,
+  /*   signInWithEmailAndPassword,
+  
+    , */
 } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';
 // import { register } from '../components/register.js';
 // import { getFirestore } from 'firebase/firestore';
@@ -21,15 +23,9 @@ const firebaseApp = initializeApp({
 
 export const auth = getAuth(firebaseApp);
 
+export const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password);
+
 // const db = getFirestore(firebaseApp);
-
-/* export const loginEmailPassword = async () => {
-  const loginEmail = register.inputEmail.value;
-  const loginPassword = register.inputPassword.value;
-
-  const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-  console.log(userCredential.user);
-}; */
 
 onAuthStateChanged(auth, (user) => {
   if (user !== null) {
