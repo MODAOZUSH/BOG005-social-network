@@ -61,32 +61,32 @@ export const register = () => {
     auth.createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
         console.log('Se registró');
+
+        onNavigate('/wall');
       });
-    /*     onNavigate('/wall'); */
-  });
 
-  buttonBack.addEventListener('click', () => {
-    onNavigate('/');
-  });
+    buttonBack.addEventListener('click', () => {
+      onNavigate('/');
+    });
 
-  container.append(
-    title,
-    subTitle,
-    formRegister,
-    buttonBack,
-  );
+    container.append(
+      title,
+      subTitle,
+      formRegister,
+      buttonBack,
+    );
 
-  formRegister.append(
-    nameText,
-    inputName,
-    emailText,
-    inputEmail,
-    userText,
-    inputUser,
-    passwordText,
-    inputPassword,
-    buttonSign,
-  );
+    formRegister.append(
+      nameText,
+      inputName,
+      emailText,
+      inputEmail,
+      userText,
+      inputUser,
+      passwordText,
+      inputPassword,
+      buttonSign,
+    );
 
-  return container;
-};
+    return container;
+ )};
